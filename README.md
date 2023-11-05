@@ -57,6 +57,9 @@ Docker is a popular platform as a service (PaaS) for containerization. It create
 
 Imagine you have a lunchbox that holds your sandwich, fruit, and a drink. Docker is like a digital lunchbox that holds your software and everything it needs to work properly.
 
+![image](https://github.com/rafid29mehda/Docker/assets/71279591/708f3fe8-1cc0-4357-a113-32c5811f9db7)
+
+
 
 
 ## 4. Docker Architecture
