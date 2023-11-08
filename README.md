@@ -52,7 +52,7 @@ It's important to choose between containers and VMs based on the specific requir
 
 ## 3. Docker
 
-Docker is a popular platform as a service (PaaS) for containerization. It creates, deploy, and run applications in lightweight, portable containers, which encapsulate an application and its dependencies. Here dependencies refers to the system libraries, runtimes, configuration files, database drivers etc. 
+Docker is a popular platform as a service (PaaS) for containerization. It creates, deploy, and run applications in lightweight, portable containers, which encapsulate an application and its dependencies. Here, dependencies refers to the system libraries, runtimes, configuration files, database drivers etc. 
 
 
 Imagine you have a lunchbox that holds your sandwich, fruit, and a drink. Docker is like a digital lunchbox that holds your software and everything it needs to work properly.
