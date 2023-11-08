@@ -321,4 +321,4 @@ A private registry, on the other hand, is a Docker registry that is not publicly
 > [!NOTE]
 For more information about Docker visit [Docker Docs](https://docs.docker.com/).
 
-## Happy containerizing!
+## Happy Containerizing!
