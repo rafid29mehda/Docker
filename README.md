@@ -226,7 +226,7 @@ This Docker Compose file defines three services: a web server using the Nginx im
 - `docker-compose restart`: Restart running containers.
 
 
-## 9. Docker Networking
+## 8. Docker Networking
 
 In the world of containers, applications are often split into multiple parts, each running in its own container, and they need a way to interact seamlessly. Docker networks provide a structured and isolated means for containers to connect, communicate, and share data. Docker networking is a fundamental feature that allows containers to communicate with each other and with the external world in a controlled and isolated manner. In a Docker environment, various containers often need to interact, whether it's web services, databases, or other components of an application. Docker provides a range of networking options to enable this connectivity. Common docker network commands -
 
@@ -237,7 +237,7 @@ In the world of containers, applications are often split into multiple parts, ea
 - `docker network disconnect NETWORK CONTAINER`: Disconnect a container from a network.
 
 
-### 9.1 Bridge Network
+### 8.1 Bridge Network
 
 By default, Docker creates a bridge network for each host. When we run a container without specifying a network, it automatically joins this network. Containers on the bridge network are isolated from the host's network stack and from each other. This isolation is vital for ensuring that containers don't interfere with the host system or with other containers, enhancing security and stability.
 
@@ -249,7 +249,7 @@ Bridge networks allow containers to access external networks, such as the intern
 
 Moreover, Docker maintains a built-in DNS server for containers connected to the bridge network, facilitating hostname-to-IP address resolution. This simplifies communication between containers, making it easy to reference other containers by name.
 
-### 9.2 Host Network
+### 8.2 Host Network
 
 The host network mode in Docker is a networking configuration that provides containers with direct access to the host's network stack. Unlike other network modes, where containers are isolated and have separate network namespaces, in host network mode, containers share the same network settings and interfaces as the Docker host itself. This results in the highest possible network performance because it eliminates the overhead of network address translation (NAT) and other abstractions present in bridge networks or other modes.
 
@@ -259,13 +259,13 @@ Containers in host network mode can directly bind to host ports, effectively rem
 
 The host network mode in Docker is an ideal choice when network performance is a top priority, and the trade-off of reduced isolation can be managed. It's commonly used in specialized scenarios where low-latency communication is critical, but it may not be the best choice for most use cases, particularly those where security and isolation are significant concerns. The decision to use host network mode should be made with a clear understanding of the specific requirements and risks associated with the application.
 
-### 9.3 None Network
+### 8.3 None Network
 
 The "none" network mode in Docker offers a level of network isolation that completely severs network connectivity for containers. In this configuration, containers have no access to external networks, including the internet, and are unable to communicate with other containers or services. This network mode is often employed in scenarios where absolute network isolation is required, such as in highly secure environments or for specific use cases where network connectivity is neither necessary nor desired.
 
 One of the defining features of the "none" network mode is its total network isolation. Containers in this mode exist in isolation, free from the potential risks associated with network communication. This isolation is ideal for scenarios where security and data protection are paramount.
 
-## 10. Docker Volume
+## 9. Docker Volume
 
 Docker volumes are like special folders that allow containers to save and share data. They're great for storing things like files and databases. Volumes are important because they let data stick around even when containers are gone. We can imagine volumes as magic folders that don't disappear when we close our container. This is helpful for sharing data between containers or keeping important information safe. 
 
@@ -277,21 +277,21 @@ Docker volumes are like special folders that allow containers to save and share 
 
 Docker has different types of volumes-
 
-### 10.1 Named Volume 
+### 9.1 Named Volume 
 Named volumes are explicitly created and given a user-defined name. They are designed for long-term data storage and ease of management. We can create a named volume with the `docker volume create` command, specifying the name. Named volumes are often used to store configuration files, databases, or other critical data that needs to persist beyond the lifespan of containers.
 
-### 10.2 Host Volume
+### 9.2 Host Volume
 A host volume is a specific directory on the host system that is mounted into a container as a volume. Host volumes provide a way to share data between the host and the container. They are created by specifying the host directory path as part of the container's -v or --volume option when starting the container.
 
-### 10.3 Anonymous Volume
+### 9.3 Anonymous Volume
 Anonymous Volume: Anonymous volumes are created automatically by Docker to hold container-specific data. They are often used for temporary or disposable data, such as log files, cache, or application-generated content. Anonymous volumes are managed by Docker and do not have user-defined names.
 
-### 10.4 In-Build Volume
+### 9.4 In-Build Volume
 An in-build volume is a volume created as part of a Docker image. It can be useful when an image needs a specific directory to store data that should persist across container instances. These volumes are typically defined in the Dockerfile using the VOLUME instruction.
 
 Docker volumes provide a flexible and scalable solution for managing data in containers. They ensure data persistence, even if a container is removed, and they allow data sharing between containers or between containers and the host system. Volumes are crucial for containerized applications that require data storage, stateful services, and data exchange.
 
-## 11. Docker Registry
+## 10. Docker Registry
 
 A Docker registry is a storage and distribution system for Docker images. It acts as a central repository where Docker images can be pushed, pulled, and shared. Docker images are stored in these registries and can be retrieved and run on different Docker host systems, enabling easy distribution of applications and their dependencies.
 
@@ -301,18 +301,18 @@ A Docker registry is a storage and distribution system for Docker images. It act
 - `docker logout [REGISTRY]`: Log out from a Docker registry.
 
 
-### 11.1 Public Registry
+### 10.1 Public Registry
 
 A public registry is a Docker registry that is open to the public, and anyone can access and download images from it.
 
-#### 11.1.1 Docker Hub
+#### 10.1.1 Docker Hub
 
 Docker Hub is one of the most well-known and widely used public Docker registries. It serves as a central hub for sharing, distributing, and discovering container images. Docker Hub hosts a vast repository of images created by the community, covering a wide range of applications, development stacks, and services. Users can access and pull images from Docker Hub, significantly speeding up the containerization process by providing a vast library of pre-built images. Docker Hub also offers additional features for organizations, such as private repositories and automated image builds, enabling teams to collaborate and streamline their Docker image workflows. It has become an essential resource for developers and teams looking to leverage containerization for their applications.
 
 ![image](https://github.com/rafid29mehda/Docker/assets/71279591/e5c53296-d292-4111-88be-f607e5c9fcab)
 
 
-### 11.2 Private Registry
+### 10.2 Private Registry
 
 A private registry, on the other hand, is a Docker registry that is not publicly accessible. Organizations use private registries to store and manage their own Docker images, often containing proprietary or sensitive software. Private registries are crucial for maintaining control over the distribution and access to custom-built images within an organization. Docker Trusted Registry (DTR) is one example of a Docker private registry that offers features for secure image storage, management, and access control.
 
